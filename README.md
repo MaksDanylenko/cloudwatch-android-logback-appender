@@ -79,14 +79,15 @@ cloudWatchAppender.setLogStreamName("device_test_guid");
 cloudWatchAppender.setLogRegion("eu-central-1");
 cloudWatchAppender.setAccessKeyId(BuildConfig.CLOUDWATCH_ACCESS_KEY_ID);
 cloudWatchAppender.setSecretAccessKey(BuildConfig.CLOUDWATCH_SECRET_ACCESS_KEY);
+// Start the CloudWatch appender
+cloudWatchAppender.start();
 
 // Attach appenders to the root logger
 ch.qos.logback.classic.Logger rootLogger = loggerContext.getLogger("ROOT");
 rootLogger.addAppender(consoleAppender);
 rootLogger.addAppender(cloudWatchAppender);
 
-// Start the CloudWatch appender
-cloudWatchAppender.start();
+
 ```
 
 > 🔐 Make sure to keep your AWS credentials secure. It's recommended to use `BuildConfig` or another secure storage strategy.

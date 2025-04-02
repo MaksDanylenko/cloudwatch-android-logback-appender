@@ -96,11 +96,12 @@ public class MainActivity extends AppCompatActivity {
             cloudWatchAppender.setLogRegion("eu-central-1");
             cloudWatchAppender.setAccessKeyId(BuildConfig.CLOUDWATCH_ACCESS_KEY_ID);
             cloudWatchAppender.setSecretAccessKey(BuildConfig.CLOUDWATCH_SECRET_ACCESS_KEY);
+            cloudWatchAppender.start();
+
             // Add the appender to the root logger
             ch.qos.logback.classic.Logger rootLogger = loggerContext.getLogger("ROOT");
             rootLogger.addAppender(consoleAppender);
             rootLogger.addAppender(cloudWatchAppender);
-            cloudWatchAppender.start();
 
             log.info("Logback configured successfully in {}", 10);
         } catch (Throwable ex) {
