@@ -1,0 +1,55 @@
+plugins {
+    alias(libs.plugins.android.application)
+}
+
+android {
+    namespace 'io.clearsoutions.sendlogs'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId "io.clearsoutions.sendlogs"
+        minSdk 24
+        targetSdk 35
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String", "CLOUDWATCH_ACCESS_KEY_ID", "\"${CLOUDWATCH_ACCESS_KEY_ID}\""
+        buildConfigField "String", "CLOUDWATCH_SECRET_ACCESS_KEY", "\"${CLOUDWATCH_SECRET_ACCESS_KEY}\""
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    buildFeatures {
+        buildConfig true
+    }
+    lint {
+        checkReleaseBuilds = false
+        abortOnError = false
+    }
+}
+
+
+dependencies {
+
+    implementation libs.appcompat
+    implementation libs.material
+    implementation libs.activity
+    implementation libs.constraintlayout
+    testImplementation libs.junit
+    androidTestImplementation libs.ext.junit
+    androidTestImplementation libs.espresso.core
+
+    implementation("ch.qos.logback:logback-classic:1.2.3")
+    //implementation("com.github.clear-solutions:cloudwatch-android-logback-appender:v.1.2.3_test_14")
+    implementation(project(":cloudwatch-android-logback-appender"))
+}
