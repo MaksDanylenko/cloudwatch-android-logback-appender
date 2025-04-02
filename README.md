@@ -46,6 +46,13 @@ dependencies {
 You can configure the CloudWatch appender programmatically as shown below:
 
 ```java
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import ch.qos.logback.classic.LoggerContext;
+import ch.qos.logback.classic.encoder.PatternLayoutEncoder;
+import ch.qos.logback.core.ConsoleAppender;
+import io.clearsoutions.android.logback.cloudwatch.appender.CloudWatchAppender;
+
 LoggerContext loggerContext = (LoggerContext) LoggerFactory.getILoggerFactory();
 
 // Create a PatternLayoutEncoder
@@ -85,6 +92,9 @@ cloudWatchAppender.start();
 > 🔐 Make sure to keep your AWS credentials secure. It's recommended to use `BuildConfig` or another secure storage strategy.
 
 This setup will send logs to both the Android console (for development/debugging) and to AWS CloudWatch.
+
+## 🔐 How to create access and secret keys
+[How to Create AWS Keys](HowToCreateAwsKeys.md)
 
 ## 🔄 Versioning
 

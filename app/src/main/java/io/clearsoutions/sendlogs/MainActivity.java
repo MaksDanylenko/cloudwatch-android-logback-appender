@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
             encoder.setOutputPatternAsHeader(true);
             encoder.start();
 
-            // Console Appender
+            // Console Appender, need to use without it, android did not show the line numbers
             ConsoleAppender consoleAppender = new ConsoleAppender<>();
             consoleAppender.setContext(loggerContext);
             consoleAppender.setEncoder(encoder);
