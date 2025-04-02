@@ -50,6 +50,5 @@ dependencies {
     androidTestImplementation libs.espresso.core
 
     implementation("ch.qos.logback:logback-classic:1.2.3")
-    //implementation("com.github.clear-solutions:cloudwatch-android-logback-appender:v.1.2.3_test_14")
-    implementation(project(":cloudwatch-android-logback-appender"))
+    implementation("com.github.clear-solutions:cloudwatch-android-logback-appender:1.2.3")
 }
