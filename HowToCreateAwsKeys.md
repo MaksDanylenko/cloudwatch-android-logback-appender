@@ -14,7 +14,7 @@ Step-by-step instructions on how to create an **Access Key** and **Secret Access
 
 2. Choose **CloudWatch Logs** as the service
 
-       ![Create policy example](images/choose_cloudwatch.png)
+    ![Create policy example](images/choose_cloudwatch.png)
 
 3. Select the following actions:
     - `CreateLogGroup`
