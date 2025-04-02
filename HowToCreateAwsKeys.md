@@ -23,7 +23,7 @@ Step-by-step instructions on how to create an **Access Key** and **Secret Access
 
 **example of how to choose actions:**
 
-     ![example of how to choose actions](images/choose_actions.png)
+   ![example of how to choose actions](images/choose_actions.png)
 
 
 4. Select the resources the actions should apply to  
